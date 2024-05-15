@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container">
+        <div class="default-logo">
+            <img src="https://i.postimg.cc/5NW6QwZ3/booking-com-hotel-business-expedia-backpacker-hostel-hotel-removebg-preview.png"
+                alt="">
+            <h3 class="mt-2">Stay <span class="span">Ease</span></h3>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ">
+                <li class="nav-item">
+                    <a class="nav-link " routerLink="/" routerLinkActive="active"
+                        [routerLinkActiveOptions]='{exact: true}'>Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/rooms" routerLinkActive="active">Rooms</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/hotels" routerLinkActive="active">Hotels</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/bookedrooms" routerLinkActive="active">My Booking</a>
+                </li>
+            </ul>
+            <!-- <form class=" d-flex text-center">
+                    <input class="form-control me-2  " type="search" placeholder="Search" aria-label="Search" id="s1"
+                        name="search">
+                    <button class="btn btn-outline-success " type="submit">Search</button>
+                </form> -->
+            <ul class="navbar-nav ">
+
+                <li class="nav-item">
+                    <a *ngIf="!login" class="nav-link  ms-5 me-5  fs-5" routerLink="login">
+                        <i routerLink="profile" class="fa-solid fa-user " style="color:black"></i>
+                        Login
+                    </a>
+                    <!-- If the user is logged in -->
+                    <a *ngIf="login" class="nav-link ms-5 me-5 fs-5" style="text-decoration: none; color: cadetblue;">
+                        <!-- Link to the user's profile page -->
+                        <a [routerLink]="'profile/' + currentUserId" style="text-decoration: none; color: cadetblue;">
+                            <i class="fa-solid fa-user" style="color:black"></i>
+                            {{UserName}}
+                        </a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <!-- Logout functionality -->
+                        <a (click)="logout()" style="text-decoration: none; ">
+                            Logout
+                        </a>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

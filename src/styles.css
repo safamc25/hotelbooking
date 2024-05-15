@@ -1,1 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Lobster&family=Protest+Riot&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+h3{
+    font-family: "Kalam", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.mainbtn {
+    padding: 7px 25px;
+    border: none;
+    background-color: #51a9b4;
+    box-shadow: 0px 0px 12px 4px #a6babd;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    transition: 0.2s all ease;
+}
+.mainbtn:hover {
+    background-color: #7ecbd5;
+    box-shadow: 0px 0px 13px 4px #51a9b4;
+}
+
+span{
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+}
+.c1{
+    background-color: green;
+}
+
+.c2{
+    background-color: red;
+}
+

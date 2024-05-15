@@ -1,0 +1,221 @@
+<app-header></app-header>
+<!-- banner start -->
+<section id="banner">
+    <div class="container-fluid">
+        <div class="cover">
+            <div class="main-text">
+                <ul>
+                    <li><i class="fa-regular fa-star"></i></li>
+                    <li><i class="fa-regular fa-star"></i></li>
+                    <li><i class="fa-regular fa-star"></i></li>
+                    <li><i class="fa-regular fa-star"></i></li>
+                    <li><i class="fa-regular fa-star"></i></li>
+                </ul>
+                <h1>Five Star Hotels</h1>
+                <ul>
+                    <li><i class="fa-regular fa-star"></i></li>
+                    <li><i class="fa-regular fa-star"></i></li>
+                    <li><i class="fa-regular fa-star"></i></li>
+                    <li><i class="fa-regular fa-star"></i></li>
+                    <li><i class="fa-regular fa-star"></i></li>
+                </ul>
+
+
+            </div>
+            <h3>And we like to keep it that way!</h3>
+            <button routerLink="/hotels">SEE HOTELS</button>
+
+        </div>
+
+
+    </div>
+</section>
+
+<!-- banner end -->
+
+<header class="mt-5">
+    <div class="container mt-5">
+        <div class="header-text">
+            <h1>Popular Hotels</h1>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="section">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+                <div class="col mt-5 d-flex justify-content-center" *ngFor="let i of hotels">
+                    <div class="card">
+                        <div class="card-itemss">
+                            <a routerLink="/hotelrooms/{{i._id}}" style="text-decoration: none;">
+                                <!-- <button [routerLink]="'/hotelrooms/' + i._id">VIEW ROOMS</button> -->
+                            <img [src]="i.image" class="card-img-top " style="width: 23rem; height: 12rem;"  alt="...">
+                            </a>
+                                                      
+                            <div class="card-body-top">
+                                <div class="info-hotel">
+                                    <h3 class="card-text">{{i.name}}</h3>
+                                  
+                                    <p class="card-text" style="color: gray;" ><i class="fa-solid fa-location-dot" style="color: blue;"  ></i>  {{i.city}}</p>
+                                    
+
+                                </div>
+                                
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </section>
+</main>
+
+
+<header class="mt-5">
+    <div class="container mt-5">
+        <div class="header-text">
+            <h1>Guest Favourite Rooms</h1>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="section">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+                <div class="col mt-5 d-flex justify-content-center"  *ngFor="let j of rooms" >
+                    <div class="card" style="height: 250px;">
+                        <div class="card-items">
+                            <a routerLink="/roomdetails/{{j._id}}" style="text-decoration: none;">
+
+                            <img [src]="j.image" class="card-img-top" alt="..." style="width: 23rem; height: 12rem;">
+                            </a>
+                           
+                            <div class="card-body-top">
+                                <div class="info">
+                                    <p class="card-text">{{j.roomname}}</p>
+                                    <div class="prices">
+                                        <p class="price">{{j.price | currency:"EUR":"symbol"}}</p>
+                                        <p class="night">a night</p>
+                                    </div>
+
+                                </div>
+                                <!-- <button routerLink="/roomdetails">BOOK NOW</button> -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </section>
+</main>
+
+<!-- ups section -->
+<header>
+    <div class="container mt-5">
+        <div class="header-text">
+            <h1>USP Section</h1>
+        </div>
+    </div>
+</header>
+
+<main>
+
+</main>
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-1 row-cols-lg g-3 ">
+        <div class="col mt-5 d-flex justify-content-center">
+            <div class="card-ups mb-5 ">
+                <div class="card-items  ">
+                    <div class="cover-ups">
+                        <i class="fa-solid fa-martini-glass-empty"></i>
+                    </div>
+                    <div class="card-body-ups">
+                        <h3>Beverages included</h3>
+                        <p>Indulge in a delightful array of beverages at our hotel, where every sip is a journey in
+                            taste and refinement. From freshly brewed coffee to invigorating teas, our extensive
+                            selection caters to every palate and preference. Savor the rich aromas and bold flavors of
+                            our specialty coffees, expertly crafted by our skilled baristas.</p>
+
+
+
+                    </div>
+
+
+
+                </div>
+            </div>
+            <div class="card-ups mb-5 ">
+                <div class="card-items  ">
+                    <div class="cover-ups">
+                        <i class="fa-regular fa-credit-card"></i>
+                    </div>
+                    <div class="card-body-ups">
+                        <h3>Stay First, Pay After!</h3>
+                        <p>
+                            Experience luxury without worrying about upfront payments with our exclusive "Stay First,
+                            Pay After" offer! At our hotel, we prioritize your comfort and convenience. Book your stay
+                            now and settle the bill later, allowing you to indulge in a relaxing getaway worry-free.
+                            Reserve your room today and embark on a journey of unparalleled hospitality with us.</p>
+
+
+                    </div>
+
+
+
+                </div>
+            </div>
+
+
+            <div class="card-ups mb-5 ">
+                <div class="card-items ">
+                    <div class="cover-ups">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <div class="card-body-ups">
+                        <h3>24 Hour Restaurant</h3>
+                        <p>Indulge in culinary delights around the clock at our 24-hour restaurant, where delectable
+                            flavors and impeccable service await you at any hour. Whether you're craving a midnight
+                            snack or a gourmet breakfast at dawn, our diverse menu caters to all tastes and cravings,
+                            ensuring that every meal is a memorable experience. </p>
+
+                    </div>
+
+
+
+                </div>
+            </div>
+
+            <div class="card-ups mb-5 ">
+                <div class="card-items ">
+                    <div class="cover-ups">
+                        <i class="fa-solid fa-droplet"></i>
+                    </div>
+                    <div class="card-body-ups">
+                        <h3>Spa Included!</h3>
+                        <p>
+                            Escape into a realm of relaxation and rejuvenation with our inclusive spa experience. Pamper
+                            yourself with our array of luxurious treatments designed to soothe the body, mind, and soul.
+                            From indulgent massages to revitalizing facials, our skilled therapists ensure each session
+                            is tailored to your specific needs, leaving you feeling utterly refreshed and renewed.
+                            </p>
+
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

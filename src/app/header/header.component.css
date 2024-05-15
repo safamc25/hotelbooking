@@ -1,0 +1,62 @@
+
+nav {
+    height: 80px;
+    padding: 0 50px;
+    background-color: #f8f8f8;
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100vw;
+   
+    
+
+   
+}
+
+
+.default-logo {
+    width: 200px;
+    height: 80px;
+    border-right: 1px solid #e1e1e1;
+    display: flex;
+    align-items: center;
+    border-color: #e7e7e7;
+}
+
+.default-logo img {
+    width: 65px;
+    height: 55px;
+}
+ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 50px;
+}
+
+ul li a {
+    font-weight: 700;
+    color: grey;
+    cursor:  black;
+    
+}
+
+.active {
+    color: #75c5cf !important;
+    text-shadow: 2px 2px #e1e1e1
+}
+
+#navbarNav {
+    background-color: #f8f8f8;
+    
+}
+
+
+h3{
+    color:  rgba(69, 140, 140, 0.785);
+}
+
+.span{
+    color:rgb(104, 112, 211);
+}

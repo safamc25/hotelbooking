@@ -1,0 +1,49 @@
+<div class="row ">
+    <div class="col-11"> 
+    </div>
+    <div class="col-1 mt-3"> <a class="" routerLink="/admin">Logout</a></div>
+   
+   </div>
+<div class="row">
+    <div class="col-lg-1">
+  
+    </div>
+  
+    
+          <div class="col-lg-10  text-center ">
+              <h2 class="mt-5  ">Booking List</h2>
+              <table class="table  border table-striped  shadow rounded my-5 " >
+                  <thead>
+                      <tr class="table-dark">
+                          <th scope="col">#</th>
+                          <th scope="col">Hotelname</th>
+                          <th scope="col">Roomname</th>
+                          <th scope="col">Booked Date</th>
+                          <th scope="col">Check In</th>
+                          <th scope="col">Check Out</th>
+                      </tr>
+                  </thead>
+                  <tbody  >
+                     <tr  *ngFor="let i of booking let j = index">
+                          <th scope="row">{{j+1}}</th>
+                          
+                          <td>{{i.hotel}}</td>
+                          <td>{{i.room}}</td>
+                          <td>{{i.date}}</td>
+                          <td>{{i.checkIn}}</td>
+                          <td>{{i.checkOut}}</td>
+                          
+                             
+                             
+                      </tr>
+  
+                  </tbody>
+              </table>
+  
+             
+  
+          </div>
+     </div>
+      <div></div>
+     
+  

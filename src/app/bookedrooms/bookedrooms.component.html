@@ -1,0 +1,81 @@
+<app-header></app-header>
+<div *ngIf="booking.length<=0" class="container">
+  <img src="https://i.postimg.cc/k4BPwbQ1/hotel-logo-10250-628.avif " alt="">
+
+  <div class="text-center">
+    <img src="../../../assets/hotel-logo_10250-628.avif" alt="" />
+    <h6>No Booked Rooms</h6>
+    <button routerLink="/rooms" class="mt-4">Book Now</button>
+  </div>
+
+
+
+</div>
+
+
+<main>
+
+  <div *ngIf="booking.length>0" class="container">
+   
+    <h1 class="text-center text-primary">Booking List</h1>
+
+    <div class="card bg-white mt-5">
+      <div class="product">
+      
+        <table>
+          <thead>
+            <tr>
+              <th>Book ID</th>
+              <th colspan="2">Customer</th>
+              <th>Status</th>
+              <th>Booked Date</th>
+              <th>Check in</th>
+              <th>Check out</th>
+              <!-- <th>Total Price</th> -->
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let i of booking let j = index ">
+            <tr  >
+              <td>{{j+1}}</td>
+
+              <td >
+                <p class="fw-bolder">Name:{{i.name}} </p>
+                <p>Phone:{{i.phone}} </p>
+              </td>
+              <td></td>
+              <td>
+                <p class="status">Booked</p>
+              </td>
+              <td>
+                <p class="fw-bolder">{{i.date}}</p>
+              </td>
+              <td>
+                <p class="fw-bolder">{{i.checkIn}}</p>
+              </td>
+              <td>
+                <p class="fw-bolder">{{i.checkOut}}</p>
+              </td>
+              <!-- <td>
+                <p class="fw-bolder">{{i.grandTotal}}
+
+                </p>
+              </td> -->
+              <td>
+                <button class="cancelbtn" (click)="removeBooking(i._id)">
+                  CANCEL BOOKING
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+
+
+</main>
+
+<app-footer></app-footer>

@@ -1,0 +1,58 @@
+<app-header></app-header>
+<header>
+    <div class="container">
+        <div class="selectrooms">
+
+            <!-- <h2>Rating</h2> -->
+            <button (click)="filterHotelsByRating(0)">All</button>
+            <button (click)="filterHotelsByRating(5)">5<i class="fa-regular fa-star"></i></button>
+            <button (click)="filterHotelsByRating(4)">4<i class="fa-regular fa-star"></i></button>
+            <button (click)="filterHotelsByRating(3)">3<i class="fa-regular fa-star"></i></button>
+            <button (click)="filterHotelsByRating(2)">2<i class="fa-regular fa-star"></i></button>
+            <button (click)="filterHotelsByRating(1)">1<i class="fa-regular fa-star"></i></button>
+
+        </div>
+        <div *ngIf="noDataAvailable">
+           <h4 class="text-center my-5 py-5"><i class="fa-regular fa-face-frown"></i> No hotel available for the selected rating</h4></div>
+    </div>
+</header>
+
+<main>
+    <section>
+        <main>
+            <section>
+                <div class="container">
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+                        <div class="col mt-5 d-flex justify-content-center" *ngFor="let i of hotels">
+                            <div class="card">
+                                <div class="card-items ">
+                                    <img [src]="i.image" class="card-img-top " alt="..."
+                                        style="width: 25rem; height: 12rem;">
+                                    <div class="card-body-top">
+                                        <div class="info">
+                                            <h3 class="card-text">{{i.name}}<span class="rate p-1  "
+                                                    [ngClass]="i.rating >= 4 ? 'c1' : 'c2'">{{i.rating}}
+
+                                                    <i class="fa-solid fa-star "></i>
+                                                </span></h3>
+                                            <p class="card-text"><i class="fa-solid fa-location-dot"></i> {{i.city}}</p>
+
+
+
+
+                                        </div>;
+                                        <button [routerLink]="'/hotelrooms/' + i._id">VIEW ROOMS</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </section>
+        </main>
+    </section>
+</main>
+<app-footer></app-footer>

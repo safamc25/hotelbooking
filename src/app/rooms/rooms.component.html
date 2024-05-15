@@ -1,0 +1,95 @@
+<app-header></app-header>
+
+<header>
+    <div class="container">
+        <div class="selectrooms">
+
+            <button (click)="roomList()">All</button>
+            <button (click)="getSingleRooms()">Single Room</button>
+            <button (click)="getDoubleRooms()">Double Room</button>
+            <button (click)="getDeluxRooms()">Deluxe Room</button>
+
+        </div>
+    </div>
+</header>
+
+<main>
+    <section>
+        <!-- <div class="container bottom">
+            <div class="inputboxs">Price Per Night
+                <ngx-slider [(value)]="value" [(highValue)]="highValue" [options]="options"></ngx-slider>
+            </div>
+            <div class="inputboxs">
+                <label>Room Type <i class="fa-solid fa-circle-info"></i></label>
+                <select name="room" id="room" [(ngModel)]="selectedRoomType" (change)="applyFilters()">
+                    <option selected value="">Select a room</option>
+                    <option value="singleroom">Single Room</option>
+                    <option value="doubleroom">Double Room</option>
+                    <option value="deluxeroom">Deluxe Room</option>
+                </select>
+
+            </div> -->
+            <!-- 
+            <div class="inputboxs">
+                <label>Check-in <i class="fa-solid fa-circle-info"></i></label>
+                <input type="date" name="" id="" placeholder="Check-in" [(ngModel)]="checkInDate" (change)="applyFilters()">
+            </div>
+            <div class="inputboxs">
+                <label>Check-out <i class="fa-solid fa-circle-info"></i> </label>
+                <input type="date" name="" id="" placeholder="Check-out" [(ngModel)]="checkOutDate" (change)="applyFilters()">
+            </div> -->
+            <!-- <div class="inputboxs">
+                <label>Guest <i class="fa-solid fa-user"></i> </label>
+                <select name="guest" id="guest" [(ngModel)]="numberOfGuests" (change)="applyFilters()">
+                    <option selected value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+
+            </div>
+
+            <div class="inputbuttons">
+                <button class="mainbtn" (click)="applyFilters()">APPLY FILTER</button>
+                <button class="mainbtn" (click)="resetFilters()">RESET</button>
+            </div>
+
+
+
+        </div> -->
+
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+                <div class="col mt-5 d-flex justify-content-center" *ngFor="let i of rooms">
+                    <div class="card">
+                        <div class="card-items">
+                            <img [src]="i.image" class="card-img-top" style="width: 23rem; height: 15rem;" alt="...">
+                            <div class="card-body-top">
+                                <div class="info">
+                                    <p class="card-text">{{i.roomname}}</p>
+                                    <div class="prices">
+                                        <p class="price">{{i.price | currency:"EUR":"symbol"}}</p>
+                                        <p class="night">a night</p>
+                                    </div>
+
+
+                                </div>
+                                <button routerLink="/roomdetails/{{i._id}}">BOOK NOW</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </section>
+
+</main>
+<app-footer></app-footer>

@@ -1,0 +1,72 @@
+<div class="row ">
+ <div class="col-11"> 
+ </div>
+ <div class="col-1 mt-3"> <a class="" routerLink="/admin">Logout</a></div>
+
+</div>
+
+<div class="container w-75 my-4 ">
+    <div class="row m-5 pb-3 text-center border rounded border-dark  ">
+   
+        <div class="col-lg-1 mt-5">
+        
+        </div> 
+       
+        <div class="col-lg-11 " >
+        
+
+            <h1 class=" mt-1">Add New Hotel Details</h1>
+            <form  class="row g-3 mt-3"  (ngSubmit)="addHotel()"  [formGroup]="hotelModel">
+                <div class=" text-center">
+                  <label for="name" class="form-label">Hotel Name</label>
+                  <input formControlName="name" type="text" class="form-control" id="inputEmail4">
+                </div>
+                <div class="col-md-6">
+                  <label for="inputemail" class="form-label">Email</label>
+                  <input formControlName="email" type="text" class="form-control" id="inputemail">
+                </div>
+                <div class="col-md-6">
+                  <label for="inputmob" class="form-label">Mobile-No</label>
+                  <input formControlName="phone" type="text" class="form-control" id="inputmob">
+                </div>
+                <div class="col-12">
+                  <label for="inputAddress" class="form-label">Address</label>
+                  <input formControlName="address" type="text" class="form-control" id="inputAddress" >
+                </div>
+                
+                <div class="col-md-6">
+                  <label for="inputCity" class="form-label">City</label>
+                  <input formControlName="city" type="text" class="form-control" id="inputCity">
+                </div>
+                <div class="col-md-6">
+                  <label for="inputState" class="form-label">State</label>
+                  <input formControlName="state" type="text" class="form-control" id="state" >
+                </div>
+                <div class="col-md-6">
+                  <label for="rating" class="form-label">Rating</label>
+                  <!-- <input formControlName="rating" type="text" class="form-control" id="rating" > -->
+                  <select formControlName="rating" class="form-select" id="rating">
+                      <option value="">Select Rating</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                  </select>
+              </div>
+               
+                <div class="col-md-6">
+                    <label for="image" class="form-label">Image</label>
+                    <input formControlName="image" type="file" (change)="getFile($event)" class="form-control" id="inputGroupFile02">
+
+                
+                </div>
+               
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary">Add</button>
+                </div>
+              </form>
+        </div>
+
+    </div>
+</div>

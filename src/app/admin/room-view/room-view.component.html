@@ -1,0 +1,75 @@
+<div class="row ">
+    <div class="col-11"> 
+    </div>
+    <div class="col-1 mt-3"> <a class="" routerLink="/admin">Logout</a></div>   
+   </div>
+<div class="row">
+    <div class="col-lg-6 ms-5">
+       
+            <div>
+    
+                <label class="visually-hidden" for="inlineFormInputGroupUsername">Hotel Name</label>
+                <div class="input-group">
+                    <div class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></div>
+                    <input [(ngModel)]="roomName" name="search" type="text" class="form-control"
+                        id="inlineFormInputGroupUsername" placeholder="Search room ">
+                </div>
+    
+            </div>
+        </div>
+  
+    
+          <div class="col-lg-10 ms-5  text-center ">
+              <h2 class="mt-5  ">Room List</h2>
+              <table class="table  border table-striped  shadow rounded my-5 " >
+                  <thead>
+                      <tr class="table-dark">
+                          <th scope="col">#</th>
+                          <th scope="col">Hotel name</th>
+                          <th scope="col">Room name</th>
+                          <th scope="col">Room type</th>
+                          <th scope="col">No.of bed</th>
+                        
+
+                          <th scope="col">Price</th>
+                          <th scope="col">Image</th>
+  
+  
+                          <th scope="col"></th>
+                          <th scope="col"></th>
+                      </tr>
+                  </thead>
+                  <tbody  >
+                     <tr  *ngFor="let i of rooms | search:roomName:'roomname' let j = index ">
+                          <th scope="row">{{j+1}}</th>
+                          <td>{{i.hotelname}}</td>
+                          <td>{{i.roomname}}</td>
+                          <td>{{i.roomtype}}</td>
+                          <td>{{i.bed}}</td>
+                         
+                          <td>{{i.price}}</td>
+                          <td> <img [src]="i.image" style="width: 50px;"></td>
+                         
+                          <td>
+                              <a  routerLink="/admin/roomedit/{{i._id}}" class="  p-1 rounded bg-success">
+                                  <i class="fa-solid fa-user-pen mt-2" style="color: white;"></i>
+                              </a>
+                              </td>
+                             
+                             <td>
+                              <a (click)="removeRoom(i._id)" class=" p-1 rounded bg-danger">
+                                  <i class=" fa-solid fa-trash mt-2"  style="color: white;"></i>
+                              </a>
+                          </td> 
+                      </tr>
+  
+                  </tbody>
+              </table>
+  
+             
+  
+          </div>
+     </div>
+      <div></div>
+     
+  

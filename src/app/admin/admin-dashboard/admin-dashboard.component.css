@@ -1,0 +1,59 @@
+ a{
+    text-decoration: none;
+    color: white;
+    margin: 5px;
+  
+}
+hr{
+    color: white;
+}
+
+a div{
+    text-align: center;
+    font-size: large;
+}
+#nav{
+    background-color: rgb(95, 109, 110);
+    
+}
+.dropdown-menu{
+    background-color: black;
+    margin: 5px;
+}
+
+button{
+    text-align: center;
+    font-size: large;
+}
+
+h3{
+    color: rgb(228, 137, 228);
+}
+
+
+
+
+.box {
+    background-color: #c2c2c2;
+    border: 1px solid #212121;
+    padding: 30px;
+    margin-left: 80px; /* Decreased margin-right */
+    margin-bottom: 20px; /* Added margin-bottom */
+    text-align: center;
+    border-radius: 5%;
+    font-size: larger;
+    align-items: center;
+}
+
+/* Define different background colors for each box */
+.even{
+    background-color: #ff9999; /* Light red */
+}
+
+.odd {
+    background-color: #99ccff; /* Light blue */
+}
+
+strong{
+    font-size: larger;
+}

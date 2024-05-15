@@ -1,0 +1,85 @@
+<app-header></app-header>
+
+<main>
+    <section>
+        <div class="container">
+            <div class="container-left">
+                <button routerLink="/rooms" class="mainbtn"> &larr; Back</button>
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img [src]="room?.image">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button   class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+              
+            </div>
+            <div class="container-right">
+                <div class="reservation">
+                    <div *ngIf="room" class="header-text">
+                        <h1>Reservation</h1>
+                        <div  class="reserv-night">
+                            <h3>{{room.hotelname}} </h3>
+
+                            <h3>{{room.roomname}} <span style="color: #75c5cf; font-weight: bold;">{{room.price | currency:"EUR":"symbol"}} </span> - a night</h3>
+                        </div>
+                    </div>
+                    <div class="reserv-night" >
+                        <!-- <h3> <span style="color: #75c5cf; font-weight: bold;"></span> - a night</h3> -->
+                    </div>
+                    <form  [formGroup]="bookModel" (ngSubmit)="addBook()">
+                        <div class="inputboxs">
+                            <label>Check-in <i class="fa-solid fa-circle-info"></i></label>
+                            <input type="date" formControlName="checkIn" placeholder="Check-in" (change)="calculateTotalPrice()" [min]="minCheckInDate">
+                        </div>
+                        <div class="inputboxs">
+                            <label>Check-out <i class="fa-solid fa-circle-info"></i> </label>
+                            <input type="date" formControlName="checkOut" placeholder="Check-out" (change)="calculateTotalPrice()" [min]="minCheckInDate">
+                        </div>
+                        
+                        
+                    <div class="inputboxs">
+                        <label for="">Customer Name <i class="fa-solid fa-user"></i></label>
+                        <input type="text" formControlName="name" placeholder="Please enter your name">
+                      
+                    </div>
+                    <div class="inputboxs">
+                        <label>Customer Mobile-No <i class="fa-solid fa-phone"></i></label>
+                        <input type="text" formControlName="phone" placeholder="Please enter your phone number">
+                      
+                    </div>
+
+                    <input type="hidden" name="hotel" [value]="room?.hotelname">
+                    <input type="hidden" name="room" [value]="room?.roomname">
+
+                    <div class="inputboxs">
+                        <p class="fs-2 ">Total Price: {{ totalPrice | currency:"EUR":"symbol" }}</p>
+                    </div>
+                    
+                    
+                    <button type="submit">Book Now</button>
+                </form>
+
+                    
+                </div>
+            </div>
+        </div>
+        
+    </section>
+   </main>
+   <app-rooms-details-more></app-rooms-details-more>
+
+   <app-footer></app-footer>
+
+
+

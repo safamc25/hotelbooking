@@ -1,0 +1,71 @@
+<div class="row ">
+  <div class="col-11"> 
+  </div>
+  <div class="col-1 mt-3"> <a class="" routerLink="/admin">Logout</a></div> 
+ </div>
+<div class="container w-70 my-4 ">
+
+    <div class="row m-5 pb-3 text-center border rounded border-dark  ">
+        <div class="col-lg-1 mt-5">
+           
+        </div> 
+        <div class="col-lg-12 "  *ngIf="!editClicked" >
+
+            <h1 class=" mt-1">Update Hotel Details</h1>
+            <form  class="row g-3 mt-3"  (ngSubmit)="updateData()"  >
+              <input type="hidden" [(ngModel)]="roomData.hotelId" name="hotelId">
+
+              <div class='text-center'>
+                    <label for="p1">
+                        <input (change)="getFile($event)"  style="display: none;" type="file" id="p1">
+                        <img class=" w-75 shadow m-3" [src]="images" alt="">
+                    </label>
+                </div>
+                <div class="col-md-6">
+                  <label for="hotelname" class="form-label">Hotel Name</label>
+                  <select  class="form-select" id="hotelname">
+                    <option *ngFor="let hotel of hotels" [value]="hotel.name">{{ hotel.name }}</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="rname" class="form-label">Room Name</label>
+                  <input [(ngModel)]="roomData.roomname"  type="text" class="form-control" id="rname" name="rname">
+                </div>
+
+                <div class="col-md-6">
+                  <label for="roomtype" class="form-label">Room Type</label>
+                  <select [(ngModel)]="roomData.roomtype" class="form-select" id="roomtype" name="roomtype">
+                    <option value="" disabled>Select Room</option>
+                    <option value="singleroom">Single Room</option>
+                    <option value="doubleroom">Double Room</option>
+                    <option value="deluxeroom">Deluxe Room</option>
+                </select>
+                </div>
+              
+                <div class="col-md-6">
+                  <label for="nobed" class="form-label">No.of bed</label>
+                  <input [(ngModel)]="roomData.bed"  type="text" class="form-control" id="nobed" name="nobed">
+                </div>
+
+               
+                
+                <div class="col-md-6">
+                  <label for="inputPrice" class="form-label">price</label>
+                  <input [(ngModel)]="roomData.price"  type="text" class="form-control" id="inputPrice" name="price">
+                </div>
+
+
+                
+                
+
+               
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary">Update</button>
+                </div>
+              </form>
+        </div>
+
+    </div>
+</div>
+

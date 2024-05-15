@@ -1,0 +1,112 @@
+<div class="row ">
+    <div class="col-lg-2  " id="nav">
+        <div id="links">
+            <h3 class=" ms-3 mt-3 ">Welcome To Admin Dashboard </h3>
+
+            <a href="">
+
+                <div>
+                    <strong>
+                        <i class="fa-solid fa-house me-2 mt-3"></i>
+                        Home
+                    </strong>
+                </div>
+            </a>
+            <hr>
+            <div class="dropdown ">
+
+                <button class="btn btn-secondary dropdown-toggle ms-5" type="button" id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-solid fa-hotel me-2"></i>
+                    Hotels
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a routerLink="hoteladd" class="dropdown-item" href="#">Add Hotel</a></li>
+                    <li><a routerLink="hotelview" class="dropdown-item" href="#">View Hotel</a></li>
+
+                </ul>
+            </div>
+
+
+            <hr>
+
+            <div class="dropdown ">
+                <button class="btn btn-secondary dropdown-toggle ms-5" type="button" id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-solid fa-shop me-2"></i>
+                    Rooms
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a routerLink="roomadd" class="dropdown-item" href="#">Add Room</a></li>
+                    <li><a routerLink="roomview" class="dropdown-item" href="#">View Room</a></li>
+
+                </ul>
+            </div>
+
+
+            <hr>
+
+            <a routerLink="users">
+                <div>
+                    <strong>
+                        <i class="fa-solid fa-user me-2"></i>
+                        Users
+                    </strong>
+                </div>
+            </a>
+            <hr>
+            <a routerLink="booking">
+                <div>
+                    <strong>
+                        <i class="fa-solid fa-user me-2"></i>
+                        Booking
+                    </strong>
+                </div>
+            </a>
+            <hr>
+
+            <a routerLink="/login">
+                <div>
+                    <strong>
+                        <i class="fa-solid fa-right-from-bracket me-2"></i>
+                        Logout
+                    </strong>
+                </div>
+            </a>
+            <hr>
+        </div>
+    </div>
+    
+
+    
+
+        <div class="col-lg-10  text-center ">
+            <div class="container mt-5">
+                <div class="row ">
+                    <div class="col-sm-6 ">
+                        <div class="box even">
+                            <strong >Total Hotels</strong>
+                            <hr> {{ hotelCount }}
+                        </div>
+                    </div>
+                    <div class="col-sm-6 ">
+                        <div class="box even">
+                            <strong>Total Rooms</strong>
+                            <hr> {{ roomCount }}
+                        </div>
+                    </div>
+                    </div>
+                    <div class="row  mt-5">
+                    <div class="col-sm-6  ">
+                        <div class="box odd">
+                            <strong>Total Bookings</strong> 
+                            <hr>{{ bookingCount }}
+                        </div>
+                    </div>
+                    <div class="col-sm-6  ">
+                        <div class="box odd">
+                            <strong>Total Users</strong> <hr> {{ userCount }}
+                        </div>
+                    </div>
+                </div>
+            </div>

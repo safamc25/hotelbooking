@@ -1,0 +1,75 @@
+<div class="row ">
+  <div class="col-11"> 
+  </div>
+  <div class="col-1 mt-3"> <a class="" routerLink="/admin">Logout</a></div> 
+ </div>
+<div class="container w-70 my-4 ">
+
+    <div class="row m-5 pb-3 text-center border rounded border-dark  ">
+        <div class="col-lg-1 mt-5">
+           
+        </div> 
+        <div class="col-lg-12 "  *ngIf="!editClicked" >
+
+            <h1 class=" mt-1">Update Hotel Details</h1>
+            <form  class="row g-3 mt-3"  (ngSubmit)="updateData()"  >
+
+              <div class='text-center'>
+                    <label for="p1">
+                        <input (change)="getFile($event)"  style="display: none;" type="file" id="p1">
+                        <img class=" w-50 shadow m-3" [src]="images" alt="">
+                    </label>
+                </div>
+                <div class=" text-center">
+                  <label for="hotelname" class="form-label">Hotel Name</label>
+                  <input [(ngModel)]="hotelData.name"  type="text" class="form-control" id="inputEmail4" name="name">
+                </div>
+                <div class="col-md-6">
+                  <label for="inputemail" class="form-label">Email</label>
+                  <input [(ngModel)]="hotelData.email"  type="text" class="form-control" id="inputemail" name="email">
+                </div>
+                <div class="col-md-6">
+                  <label for="inputmob" class="form-label">Mobile-No</label>
+                  <input [(ngModel)]="hotelData.phone"  type="text" class="form-control" id="inputmob" name="phone">
+                </div>
+                <div class="col-12">
+                  <label for="inputAddress" class="form-label">Address</label>
+                  <input [(ngModel)]="hotelData.address"  type="text" class="form-control" id="inputAddress" name="address">
+                </div>
+                
+                <div class="col-md-6">
+                  <label for="inputCity" class="form-label">City</label>
+                  <input [(ngModel)]="hotelData.city"  type="text" class="form-control" id="inputCity" name="city">
+                </div>
+                <div class="col-md-6">
+                  <label for="inputState" class="form-label">State</label>
+                  <input [(ngModel)]="hotelData.state"  type="text" class="form-control" id="state" name="state" >
+                </div>
+                <div class="col-md-6">
+                  <label for="rating" class="form-label">Rating</label>
+                  <!-- <input formControlName="rating" type="text" class="form-control" id="rating" > -->
+                  <select [(ngModel)]="hotelData.rating"  class="form-select" id="rating" name="rating">
+                      <option value="">Select Rating</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                  </select>
+              </div>
+<!--                
+                <div class="col-md-6">
+                    <label for="image" class="form-label">Image</label>
+                    <input type="file" (change)="getFile($event)" class="form-control" id="inputGroupFile02">
+
+                
+                </div> -->
+               
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary">Update</button>
+                </div>
+              </form>
+        </div>
+
+    </div>
+</div>

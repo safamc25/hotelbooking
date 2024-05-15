@@ -1,0 +1,43 @@
+<div class="row ">
+    <div class="col-11"> 
+    </div>
+    <div class="col-1 mt-3"> <a class="" routerLink="/admin">Logout</a></div>   
+   </div>
+
+   <div class="row">
+    <div class="col-lg-1">
+  
+    </div>
+
+      <div class="col-lg-10  text-center ">
+          <h2 class="mt-5  ">User List</h2>
+          <table class="table  border table-striped  shadow rounded my-5 " >
+              <thead>
+                  <tr class="table-dark">
+                      <th scope="col">#</th>
+                      <th scope="col">User name</th>
+                      <th scope="col">Email</th>
+                      <th scope="col">phone</th>
+                    
+
+                      
+                  </tr>
+              </thead>
+              <tbody  >
+                 <tr  *ngFor="let i of users let j = index">
+                      <th scope="row">{{j+1}}</th>
+                     
+                      <td>{{i.username}}</td>
+                      <td>{{i.email}}</td>
+                      <td>{{i.phone}}</td>
+                     
+                    
+                  </tr>
+
+              </tbody>
+          </table>
+
+         
+
+      </div>
+ 

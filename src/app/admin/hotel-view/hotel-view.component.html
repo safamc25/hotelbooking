@@ -1,0 +1,78 @@
+<div class="row ">
+    <div class="col-11">
+        <a class="ms-5 mt-4" routerLink="/admin"><i class="fa-solid fa-arrow-left" ></i></a>
+    </div>
+
+    <div class="col-1 mt-3"> <a class="" routerLink="/admin">Logout</a></div>
+</div>
+<div class="row">
+
+
+    <div class="col-lg-6 ms-5">
+        <div>
+
+            <label class="visually-hidden" for="inlineFormInputGroupUsername">Hotel Name</label>
+            <div class="input-group">
+                <div class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></div>
+                <input [(ngModel)]="hotelName" name="search" type="text" class="form-control"
+                    id="inlineFormInputGroupUsername" placeholder="Search hotel ">
+            </div>
+
+        </div>
+    </div>
+
+    <div class=" col-lg-11 ms-5 text-center ">
+        <h2 class="m-5  ">Hotel List</h2>
+
+        <table class="table  border table-striped  shadow rounded my-5 ">
+            <thead>
+                <tr class="table-dark">
+                    <th scope="col">#</th>
+                    <th scope="col">Hotel Id</th>
+                    <th scope="col">Hotelname</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Mobile</th>
+                    <th scope="col">City</th>
+                    <th scope="col">State</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Rating</th>
+
+
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let i of hotels | search:hotelName:'name' let j = index">
+                    <th scope="row">{{j+1}}</th>
+                    <td>{{i._id}}</td>
+                    <td>{{i.name}}</td>
+                    <td>{{i.address}}</td>
+                    <td>{{i.email}}</td>
+                    <td>{{i.phone}}</td>
+                    <td>{{i.city}}</td>
+                    <td>{{i.state}}</td>
+                    <td> <img [src]="i.image" style="width: 50px;"></td>
+                    <td>{{i.rating}}</td>
+                    <td>
+                        <a routerLink="/admin/hoteledit/{{i._id}}" class="  p-1 rounded bg-success">
+                            <i class="fa-solid fa-user-pen mt-2" style="color: white;"></i>
+                        </a>
+                    </td>
+
+                    <td>
+                        <a (click)="removeHotel(i._id)" class=" p-1 rounded bg-danger">
+                            <i class=" fa-solid fa-trash mt-2" style="color: white;"></i>
+                        </a>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+
+
+    </div>
+</div>
+<div></div>
